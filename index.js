@@ -18,14 +18,12 @@ app.use(express.urlencoded({ extended: false }));
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect(
-    process.env.MONGODB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-).then( () => {
-    console.log('Database connection successful!');
-}).catch( (err) => {
+mongoose.connect(process.env.MONGODB_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(()=>{
+    console.log("Database Connection Successful");
+}).catch((err)=>{
     console.log(err);
 });
 
